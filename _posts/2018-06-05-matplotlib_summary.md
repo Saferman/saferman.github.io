@@ -6,7 +6,9 @@ tags:
 categories: Python
 description: 这部分内容是总结作者本人遇到的不常见的matplotlib画图技巧。内容主要以代码和效果图的形式展示。
 ---
-## 贝叶斯优化之不确定区域绘制
+### 贝叶斯优化之不确定区域绘制
+
+这里是使用贝叶斯优化实现的自动调参代码，是对Snort的配置文件中max-pattern-len参数进行的优化。最终以一种可见、美观的结果图展示。
 
 ```
 # encoding:utf-8
@@ -152,3 +154,8 @@ plt.yticks(fontsize=10.5, fontname="Times New Roman")
 plt.show()
 ```
 ![](https://saferman.github.io/assets/img/matplotlib_summary/bayesian-optimization.png)
+
+### 绘制实时动图
+
+这部分的代码主要实现接受进入的数据并实时绘制曲线的效果。（这里的代码是使用定时器，但是定时器的间隔很短最终实现只要有数据进入就能立即绘制曲线，可以接受的数据输入最大频率为200HZ）
+
