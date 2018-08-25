@@ -161,3 +161,6 @@ plt.show()
 
 这部分的代码主要实现接受进入的数据并实时绘制曲线的效果。（这里的代码是使用定时器，但是定时器的间隔很短最终实现只要有数据进入就能立即绘制曲线，可以接受的数据输入最大频率为200HZ）
 
+### 如何在QtWidgets.QGraphicsView中绘制多个场景
+### 如何在QtWidgets.QGraphicsView中添加mateplotlib的工具栏
+### PyQt 结合 matplotlib的技术
