@@ -12,7 +12,7 @@ description: 这部分内容是总结作者本人遇到的不常见的matplotlib
 
 这里是使用贝叶斯优化实现的自动调参代码，是对Snort的配置文件中max-pattern-len参数进行的优化。最终以一种可见、美观的结果图展示。
 
-```
+```python
 # encoding:utf-8
 # 参考文献：贝叶斯优化调参 笔记前面这些链接，代码来自http://36kr.com/p/5114423.html
 import matplotlib.pyplot as plt
