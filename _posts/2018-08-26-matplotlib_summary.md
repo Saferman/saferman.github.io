@@ -16,7 +16,7 @@ description: 这部分内容是总结作者本人遇到的不常见的matplotlib
 
 完整的代码可以参考 [贝叶斯优化完整代码](https://saferman.github.io/assets/code/bayesian-optimization.py)，以后再放上理论推导。
 
-这里最想谈论的是如何去绘制上图的灰色部分区域。在Google搜索无果，想到直接去查找mateplotlib官方手册找到了这个函数fill_between：
+这里最想谈论的是如何去绘制上图的灰色部分区域。在Google搜索无果，想到直接去查找mateplotlib官方手册找到了这个函数fill\_between：
 
 ```python
 plt.fill_between(all_x, mu_f(all_x) + show * sigma_f(all_x), mu_f(all_x) - show * sigma_f(all_x), facecolor="lightgray",
@@ -33,7 +33,7 @@ plt.fill_between(all_x, mu_f(all_x) + show * sigma_f(all_x), mu_f(all_x) - show 
 1. 如何实时更新图像
 2. 更新的效率问题
 
-实时更新图像有二种技术：一是使用animation，二是使用self.fig.canvas.new_timer。这二种方法原理是比较相近的，我采用了后者。关键代码如下：
+实时更新图像有二种技术：一是使用animation，二是使用self.fig.canvas.new\_timer。这二种方法原理是比较相近的，我采用了后者。关键代码如下：
 
 ```python
 timer = self.fig.canvas.new_timer(interval = self.time_interval)
@@ -41,21 +41,21 @@ timer.add_callback(self._OnTimer, ax_array)
 timer.start()
 ```
 
-这里设置了一个定时器，每过time_interval的时间间隔就执行self._OnTimer函数，参数是ax_array。这个函数会检测是否有新的需要绘制的数据然后使用ax的set_ydata重新设置y轴数据，最后使用画布的更新函数更新即可。其中time_interval设置的比持续接收到的数据频率要小。关键代码如下：
+这里设置了一个定时器，每过time\_interval的时间间隔就执行self.\_OnTimer函数，参数是ax\_array。这个函数会检测是否有新的需要绘制的数据然后使用ax的set\_ydata重新设置y轴数据，最后使用画布的更新函数更新即可。其中time\_interval设置的比持续接收到的数据频率要小。关键代码如下：
 
 ```python
 self.ax_plot[plot_num].set_ydata(self.graphInfo[name][8])
 ax_array[plot_num].draw_artist(self.ax_plot[plot_num])
 ```
 
-第二个问题就是效率，直接使用draw()更新画布会很慢，draw_idle()会变快一些，但是对于要求绘制频率更快一点需求仍然不满足。最终的解决办法是使用canvas的blit，在使用前需要调用canvas的restore_region保存背景图像，这样可以避免重影，关键代码如下：
+第二个问题就是效率，直接使用draw()更新画布会很慢，draw\_idle()会变快一些，但是对于要求绘制频率更快一点需求仍然不满足。最终的解决办法是使用canvas的blit，在使用前需要调用canvas的restore\_region保存背景图像，这样可以避免重影，关键代码如下：
 
 ```Python
 self.fig.canvas.restore_region(self.backgrounds[plot_num])
 self.fig.canvas.blit(ax_array[plot_num].bbox)
 ```
 
-关于draw()、draw_idle()和blit()效率差别的原因，浅显的讲就是第一个draw()会将画布上所有的元素（坐标轴、标签、X轴等）都会重新绘制，这个很浪费时间，尤其是整个画面数据点较多的时候，而blit只是将变化的部分重新绘制，会节约大量时间。更深层的原因需要剖析源代码，以后再说。
+关于draw()、draw\_idle()和blit()效率差别的原因，浅显的讲就是第一个draw()会将画布上所有的元素（坐标轴、标签、X轴等）都会重新绘制，这个很浪费时间，尤其是整个画面数据点较多的时候，而blit只是将变化的部分重新绘制，会节约大量时间。更深层的原因需要剖析源代码，以后再说。
 
 ### 如何在QtWidgets.QGraphicsView中添加mateplotlib的导航栏
 
