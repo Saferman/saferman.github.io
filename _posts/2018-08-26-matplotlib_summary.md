@@ -41,7 +41,7 @@ timer.add_callback(self._OnTimer, ax_array)
 timer.start()
 ```
 
-### 这里设置了一个定时器，每过time_interval的时间间隔就执行self._OnTimer函数，参数是ax_array。这个函数会检测是否有新的需要绘制的数据然后使用ax的set_ydata重新设置y轴数据，最后使用画布的更新函数更新即可。其中time_interval设置的比持续接收到的数据频率要小。关键代码如下：
+这里设置了一个定时器，每过time_interval的时间间隔就执行self._OnTimer函数，参数是ax_array。这个函数会检测是否有新的需要绘制的数据然后使用ax的set_ydata重新设置y轴数据，最后使用画布的更新函数更新即可。其中time_interval设置的比持续接收到的数据频率要小。关键代码如下：
 
 ```python
 self.ax_plot[plot_num].set_ydata(self.graphInfo[name][8])
