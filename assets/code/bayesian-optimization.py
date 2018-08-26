@@ -1,18 +1,3 @@
----
-title: matplotlib不常见的绘图技巧
-date: 2018-06-05 10:23:40
-tags:
-- Python
-categories: Python
-description: 这部分内容是总结作者本人遇到的不常见的matplotlib画图技巧。内容主要以代码和效果图的形式展示。
----
-这部分内容是总结作者本人遇到的不常见的matplotlib画图技巧，以代码和效果图的形式展示。
-
-### 贝叶斯优化之不确定区域绘制
-
-这里是使用贝叶斯优化实现的自动调参代码，是对Snort的配置文件中max-pattern-len参数进行的优化。最终以一种可见、美观的结果图展示。
-
-```python
 # encoding:utf-8
 # 参考文献：贝叶斯优化调参 笔记前面这些链接，代码来自http://36kr.com/p/5114423.html
 import matplotlib.pyplot as plt
@@ -154,13 +139,3 @@ plt.ylabel("W", fontname="Times New Roman", fontsize=10.5)
 plt.xticks(fontsize=10.5, fontname="Times New Roman")
 plt.yticks(fontsize=10.5, fontname="Times New Roman")
 plt.show()
-```
-![](https://saferman.github.io/assets/img/matplotlib_summary/bayesian-optimization.png)
-
-### 绘制实时动图
-
-这部分的代码主要实现接受进入的数据并实时绘制曲线的效果。（这里的代码是使用定时器，但是定时器的间隔很短最终实现只要有数据进入就能立即绘制曲线，可以接受的数据输入最大频率为200HZ）
-
-### 如何在QtWidgets.QGraphicsView中绘制多个场景
-### 如何在QtWidgets.QGraphicsView中添加mateplotlib的工具栏
-### PyQt 结合 matplotlib的技术
