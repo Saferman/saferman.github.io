@@ -50,7 +50,7 @@ ax_array[plot_num].draw_artist(self.ax_plot[plot_num])
 
 第二个问题就是效率，直接使用draw()更新画布会很慢，draw\_idle()会变快一些，但是对于要求绘制频率更快一点需求仍然不满足。最终的解决办法是使用canvas的blit，在使用前需要调用canvas的restore\_region保存背景图像，这样可以避免重影，关键代码如下：
 
-```Python
+```python
 self.fig.canvas.restore_region(self.backgrounds[plot_num])
 self.fig.canvas.blit(ax_array[plot_num].bbox)
 ```
@@ -63,7 +63,7 @@ self.fig.canvas.blit(ax_array[plot_num].bbox)
 
 关键的就是一个类：
 
-```Python
+```python
 from matplotlib.backends.backend_qt5 import NavigationToolbar2QT as NavigationToolbar
 ```
 
@@ -79,7 +79,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 个人常用的使用方法：
 
-```Python
+```python
 # 通过继承FigureCanvas类，使得该类既是一个PyQt5的Qwidget，又是一个matplotlib的FigureCanvas，这是连接pyqt5与matplotlib的关键
 class Figure_Canvas(FigureCanvas):                                            
     def __init__(self, parent=None, width=11, height=5, dpi=100):
