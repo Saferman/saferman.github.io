@@ -8,8 +8,6 @@ categories: CTF
 description: 清华紫荆花第二届招新赛 web 题目的解答，非常详细！
 ---
 
-## THUCTF 第二届比赛 Web WRITEUP
-
 2018 年 9 月 18 号到 2018 年 9 月 28 号在参加了 THUCTF 比赛，总结一下 Web 解题步骤和收获。
 
 ### wdSimpleSQLv1
@@ -268,7 +266,7 @@ foreach ($serverList as $host) {
 
 可见我们需要一个 HTTP POST 操作来操作这个后门，想到使用 **gopher 协议 **。这里使用一个别人的脚本生成 gopher 需要的字符串：
 
-```Python
+```python
 exp='''\
 POST /webshe11111111.php HTTP/1.1
 Host:127.0.0.1
