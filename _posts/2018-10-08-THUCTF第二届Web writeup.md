@@ -8,7 +8,7 @@ categories: CTF
 description: 清华紫荆花第二届招新赛 web 题目的解答，非常详细！
 ---
 
-2018 年 9 月 18 号到 2018 年 9 月 28 号在参加了 THUCTF 比赛，总结一下 Web 解题步骤和收获。
+2018 年 9 月 18 号到 2018 年 9 月 28 号参加了 THUCTF 比赛，总结一下 Web 解题步骤和收获。
 
 ### wdSimpleSQLv1
 
@@ -310,6 +310,8 @@ Flag{Th1 s_Easy_SSRF}
 
 当然本题还有一个可能存在问题的点，我也测试了，就是使用 SSRF 扫描内网端口，发现 3389 MYSQL 的服务，有可能存在 gopher 安全问题，这里记录一下。
 
+PS：推荐一个很好的 **SSRF + Gopher** 的工具：[https://github.com/tarunkant/Gopherus](https://github.com/tarunkant/Gopherus)
+
 ### Flask
 
 这道题是**模板注入**结合 **Flask session** 安全的题目。模板注入的利用格式如下：
@@ -329,7 +331,12 @@ config
 那我们测试一些网上常用的 payload 来搜集信息：
 
 ```
-
+{{app.__init__.__globals__.sys.modules.app.app.__dict__}}
+{{request.__dict__}}
+{{self.__dict__}}
+{{request.environ}}
+{{namespace.__dict__}}
+{{app.__init__.__globals__}}
 ```
 
 起初我是想利用模板注入得到 shell，但是调研了一下在不使用 ( ) 条件下挺难的，有没有发现其他用户添加的函数。后来仔细考虑题目主页有句话：
