@@ -131,12 +131,12 @@ static zend_always_inline zend_uchar is_numeric_string_ex(const char *str, size_
 
 继续跟踪 _is_numeric_string_ex 函数，因为其代码比较长，我只贴出核心的部分，其余部分用 ...... 代替：
 
-```c
+```
 # 其他使用的函数定义
 #define ZEND_IS_DIGIT(c) ((c) >= '0' && (c) <= '9') // 用于判断一个字符 ASCII 是否在 '0'-'9' 之间
 
 # _is_numeric_string_ex 函数定义
-ZEND_API zend_uchar ZEND_FASTCALL _is_numeric_string_ex(const char *str, size_t length, zend_long *lval, double *dval, int allow_errors, int *oflow_info) /* {{{ */
+ZEND_API zend_uchar ZEND_FASTCALL _is_numeric_string_ex(const char *str, size_t length, zend_long *lval, double *dval, int allow_errors, int *oflow_info) 
 {
 
     // 跳过开头这些空白字符
