@@ -317,7 +317,7 @@ PS：推荐一个很好的 **SSRF + Gopher** 的工具：[https://github.com/tar
 这道题是**模板注入**结合 **Flask session** 安全的题目。模板注入的利用格式如下：
 
 ```
-http://flask.thuctf2018.game.redbud.info:8000/welcome?msg={{payload}}
+flask.thuctf2018.game.redbud.info:8000/welcome?msg={{payload}}
 ```
 
 测试后端过滤的内容，发现如下内容被过滤了：
