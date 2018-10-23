@@ -26,3 +26,6 @@ article .article-content img.emoji {
 .github-card {
     margin-top: 1.5em;
 }
+body{
+    cursor:pointer;
+}
