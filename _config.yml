@@ -24,8 +24,8 @@ defaults:
     values:
       layout: "post"
 
-#### Pagination
-paginate: 20
+#### Pagination 分页
+paginate: 10
 
 #### Site
 title : Saferman's blog
@@ -86,7 +86,8 @@ share_to: true #enable share-to buttons if true
 author:
   name: Saferman      ## e.g. wuchong Author name
   intro_line1:  "Hello ,I'm Saferman."    ## your introduction on the bottom of the page
-  intro_line2:  "Keep quieter to hear more."  ## the 2nd line
+  intro_line2:  "Remember, "  ## the 2nd line
+  intro_line2:  "it's just a leap of faith!"  ## the 2nd line
   weibo:      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   weibo_verifier:  ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
   tsina:      ## e.g. 2176287895  Your weibo ID,It will be used in share button.
