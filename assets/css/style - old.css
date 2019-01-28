@@ -393,9 +393,8 @@ body >header
 {
     width: 100%;
     -webkit-box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
-    box-shadow: 2px 4px 5px rgba(71,100,244,0.2);
-    background-image: url("/assets/img/your-name.jpg");
-    background-size: cover;
+    box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
+    background: url("../../") center #2ca6cb;
     color: #fff;
     padding: 1em 0 .8em;
 }
