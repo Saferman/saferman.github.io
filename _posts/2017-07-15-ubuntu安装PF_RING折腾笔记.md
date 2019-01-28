@@ -1,11 +1,12 @@
+---
+layout: post
 title: ubuntu 安装 PF_RING 折腾笔记
 date: 2017-07-15 10:23:40
 tags:
-
 - Linux
-  categories: Linux
-  description: 暑假折腾的一个程序的安装，可以提高抓包效率。
-
+categories: Linux
+description: 暑假折腾的一个程序的安装，可以提高抓包效率。
+---
 暑假折腾的一个程序的安装，可以提高抓包效率。
 
 ## ubuntu 安装 PF_RING 折腾笔记

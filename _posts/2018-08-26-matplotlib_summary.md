@@ -1,4 +1,5 @@
 ---
+layout: post
 title: matplotlib 不常见的绘图技巧
 date: 2018-08-26 11:23:45
 tags:

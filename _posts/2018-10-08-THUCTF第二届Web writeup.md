@@ -1,4 +1,5 @@
 ---
+layout: post
 title: THUCTF 第二届 Web writeup
 date: 2018-10-08 14:33
 tags:

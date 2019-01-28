@@ -1,4 +1,5 @@
 ---
+layout: post
 title: PFRING 安装折腾笔记
 date: 2017-07-15 10:23:40
 tags:
