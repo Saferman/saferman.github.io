@@ -62,7 +62,7 @@ a img
 
 body
 {
-    background: #ddd;
+    background: #eae8f5;
     font-family: "Helvetica Neue","Helvetica","Microsoft YaHei","WenQuanYi Micro Hei",Arial,sans-serif;
     font-size: 100%;
     color: #817c7c;
@@ -435,6 +435,7 @@ body >header a
     float: left;
     width: 4em;
     height: 4em;
+
 }
 
 @media only screen and (min-width:768px)
@@ -456,13 +457,15 @@ body >header a
 #imglogo img
 {
     width: 4em;
+    border-radius:50%;
 }
 
 @media only screen and (min-width:768px)
 {
     #imglogo img
     {
-        width: 5em
+        width: 5em;
+        border-radius:50%;
     }
 }
 
@@ -470,7 +473,8 @@ body >header a
 {
     #imglogo img
     {
-        width: 5.5em
+        width: 5.5em;
+        border-radius:50%;
     }
 }
 
