@@ -25,7 +25,7 @@ echo $info;
 
 又或者今年的 hacklu 一段代码，if 里的判断逻辑怎么才能为 True？第一次接触这类问题，你花了多少时间想到？
 
-```
+```php
 $cc = 1337;$bb = 42;
 @$cc = $_GET['cc'];
 if(substr($cc, $bb) === sha1($cc)){
@@ -140,7 +140,7 @@ static zend_always_inline zend_uchar is_numeric_string_ex(const char *str, size_
 
 继续跟踪 _is_numeric_string_ex 函数，因为其代码比较长，我只贴出核心的部分，其余部分用 ...... 代替：
 
-```
+```c++
 # 其他使用的函数定义
 #define ZEND_IS_DIGIT(c) ((c) >= '0' && (c) <= '9') // 用于判断一个字符 ASCII 是否在 '0'-'9' 之间
 
@@ -283,7 +283,7 @@ foreach ($test as $key => $value){
 
 ### intval
 
-```
+```c++
 int intval ( mixed $var [, int $base ] )
 ```
 
