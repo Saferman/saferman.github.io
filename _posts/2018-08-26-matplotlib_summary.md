@@ -3,8 +3,8 @@ layout: post
 title: matplotlib 不常见的绘图技巧
 date: 2018-08-26 11:23:45
 tags:
-- Python
-categories: Python
+- python
+categories: python
 description: 这部分内容是总结作者本人遇到的不常见的 matplotlib 画图技巧。内容主要以代码和效果图的形式展示。
 ---
 这部分内容是总结作者本人遇到的不常见的 matplotlib 画图技巧，包括代码和展示图。
