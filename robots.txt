@@ -1,4 +1,6 @@
 User-agent: Googlebot
 Allow: /
-User-agent: *
+User-agent: Baiduspider
+Disallow: /
+User-agent: 360Spider
 Disallow: /
