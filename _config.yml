@@ -131,7 +131,7 @@ jiathis:
 
 #### Analytics
 google_analytics:
-  enable: true
+  enable: false
   id:  UA-143006122-1   ## e.g. UA-46321946-2 your google analytics ID.
   site:  saferman.github.io  ## e.g. wuchong.me your google analytics site or set the value as auto.
 ## You MUST upgrade to Universal Analytics first!
